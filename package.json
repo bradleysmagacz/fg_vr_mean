@@ -1,0 +1,41 @@
+{
+  "name": "mean_dev_book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MongoDB",
+    "Express",
+    "AngularJS",
+    "Node.js"
+  ],
+  "author": "Bradley Smagacz",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "compression": "^1.6.0",
+    "connect-flash": "~0.1.1",
+    "connect-mongo": "~0.4.1",
+    "cookie-parser": "^1.4.0",
+    "email-validator": "^1.0.3",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "jade": "^1.11.0",
+    "method-override": "^2.3.5",
+    "mongoose": "~3.8.15",
+    "morgan": "^1.6.1",
+    "nodemailer": "^1.10.0",
+    "passport": "^0.3.2",
+    "passport-local": "~1.0.0"
+  },
+  "devDependencies": {
+    "should": "~4.0.4",
+    "supertest": "~0.13.0",
+    "karma": "~0.12.23",
+    "karma-jasmine": "~0.2.2",
+    "karma-phantomjs-launcher": "~0.1.4"
+}
+}
