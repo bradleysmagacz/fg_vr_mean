@@ -1,0 +1,27 @@
+
+body
+	div.background
+		section.sign-up.section-padding.text-center#login
+			div.container
+				div.row
+					div.col-md-6.col-md-offset-3.login-form
+						h3 Login to your account
+						p Start fogging up those goggles!
+						- for (var i in messages) {
+							div.flash= messages[i]
+						- }
+						form.signup-form(method='post', action='/login')
+							div.form-input-group
+								i.fa.fa-envelope
+								input#email(type="text", placeholder="Username/Email", name="username", required)
+							div.form-input-group
+								i.fa.fa-lock
+								input#password(type="password", placeholder="Password", name="password", required)
+							button.btn-fill.sign-up-btn#submit(type='submit') Login
+						div.panel-footer
+							h4 New to Foggy Goggles? 
+								a(href='/signup') Sign Up
+				br
+				a.forgot-link(href='/forgot') Forgot your password
+
+

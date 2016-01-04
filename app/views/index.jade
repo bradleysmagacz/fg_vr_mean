@@ -1,0 +1,29 @@
+
+body
+	section(ng-view)
+
+	if user
+		script(type="text/javascript").
+			window.user = !{user};
+	else
+		script(type="text/javascript").
+			window.user = null;
+	
+	script(type="text/javascript", src="/socket.io/socket.io.js")
+	script(type="text/javascript", src="/lib/angular/angular.min.js")
+	script(type="text/javascript", src="/lib/angular-route/angular-route.js")
+	script(type="text/javascript", src="/lib/angular-resource/angular-resource.js")
+	script(type="text/javascript", src="/articles/articles.client.module.js")
+	script(type="text/javascript", src="/articles/controllers/articles.client.controller.js")
+	script(type="text/javascript", src="/articles/services/articles.client.service.js")
+	script(type="text/javascript", src="/articles/config/articles.client.routes.js")
+	script(type="text/javascript", src="/example/example.client.module.js")
+	script(type="text/javascript", src="/example/controllers/example.client.controller.js")
+	script(type="text/javascript", src="/example/config/example.client.routes.js")
+	script(type="text/javascript", src="/users/users.client.module.js")
+	script(type="text/javascript", src="/users/services/authentication.client.service.js")
+	script(type="text/javascript", src="/chat/chat.client.module.js")
+	script(type="text/javascript", src="/chat/controllers/chat.client.controller.js")
+	script(type="text/javascript", src="/chat/services/socket.client.service.js")
+	script(type="text/javascript", src="/chat/config/chat.client.routes.js")
+	script(type="text/javascript", src="/application.js")
