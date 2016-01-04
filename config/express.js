@@ -72,6 +72,18 @@ module.exports = function(db) {
 	// Configure static file serving
 	app.use(express.static('./public'));
 
+
+	//Error Handlers
+	app.use(function(req, res) {
+    	res.status(404);
+    	res.render('404', {title: '404: File Not Found'});
+  	});
+  
+  	app.use(function(error, req, res, next) {
+    	res.status(500);
+    	res.render('500', {title:'500: Internal Server Error', error: error});
+  	});
+
 	// Load the Socket.io configuration
 	require('./socketio')(server, io, mongoStore);
 	

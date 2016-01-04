@@ -1,4 +1,4 @@
-
+include head.jade
 body
 	h3 Error below
 	- for (var i in messages) {
@@ -26,4 +26,3 @@ body
 				label(for='confirm_password') Confirm Password*:
 				input#confirm_password(type='password', name='confirm_password', required)
 			input#create(type='submit', value='Create Account', name='create')
-script(src='js/front.js')

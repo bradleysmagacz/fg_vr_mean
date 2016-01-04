@@ -18,4 +18,4 @@ module.exports = function(app) {
 
 	app.route('/logout')
 		.get(users.logout);
-}
+};

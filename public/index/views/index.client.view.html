@@ -1,0 +1,59 @@
+<div ng-controller='IndexController'>
+	<section class="hero">
+		<div id="overlay"></div>
+		<section class="navigation">
+			<header>
+				<div class="header-content">
+					<div class="logo">
+						<a href="#"><img src="img/fg-logo.png" alt="Logo"></a>
+					</div>
+				<div class="header-nav">
+					<nav>
+						<ul class="primary-nav">
+							<li><a href="/#!/">Home</a></li>
+							<li><a href="#gallery">Gallery</a></li>
+							<span data-ng-show="authentication.user">
+								<li><a href="/#!/chat">Chat</a></li>
+								<li><a href="/#!/articles">List Articles</a></li>
+								<li><a href="/#!/articles/create">Create Article</a></li>
+							</span>
+						</ul>
+						<ul class="member-actions">
+							<span data-ng-show="!authentication.user">
+								<li><a class="login" href="/login">Login</a></li>
+								<li><a class="btn-white btn-small" href="/signup">Signup</a></li>
+							</span>
+							<span data-ng-show="authentication.user">
+								<li><a class="login" href="/logout">Logout</a></li>
+								<li><a class="btn-white btn-small" href="/account">Your Account</a></li>
+							</span>
+						</ul>
+					</nav>
+				</div>
+				<div class="navicon">
+					<a class="nav-toggle" href="#"><span></span></a>
+				</div>
+			</header>
+		</section>
+
+		<section class="introduction">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="hero-content text-center">
+							<h1>Foggy Goggles</h1>
+							<p class="intro">Experience content like never before.</p>
+							<a class="btn btn-fill btn-large btn-margin-right" href="#">Tour</a>
+							<a class="btn btn-accent btn-large" href="#gallery">Gallery</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="down-arrow floating-arrow">
+			<a href="#"><i class="fa fa-angle-down"></i></a>
+		</div>
+
+	</section>
+</div>

@@ -11,7 +11,7 @@ describe('Article Model Unit Tests:', function() {
     beforeEach(function(done) {
         user = new User({
             email: 'test@test.com',
-            firstdd: 'Full',
+            first: 'Full',
             last: 'Name',
             username: 'username',
             password: 'password'

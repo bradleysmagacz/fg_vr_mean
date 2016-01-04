@@ -1,6 +1,6 @@
-
-body
-	section(ng-view)
+include head.jade
+body#top
+	div(ng-view)
 
 	if user
 		script(type="text/javascript").
@@ -17,9 +17,9 @@ body
 	script(type="text/javascript", src="/articles/controllers/articles.client.controller.js")
 	script(type="text/javascript", src="/articles/services/articles.client.service.js")
 	script(type="text/javascript", src="/articles/config/articles.client.routes.js")
-	script(type="text/javascript", src="/example/example.client.module.js")
-	script(type="text/javascript", src="/example/controllers/example.client.controller.js")
-	script(type="text/javascript", src="/example/config/example.client.routes.js")
+	script(type="text/javascript", src="/index/index.client.module.js")
+	script(type="text/javascript", src="/index/controllers/index.client.controller.js")
+	script(type="text/javascript", src="/index/config/index.client.routes.js")
 	script(type="text/javascript", src="/users/users.client.module.js")
 	script(type="text/javascript", src="/users/services/authentication.client.service.js")
 	script(type="text/javascript", src="/chat/chat.client.module.js")

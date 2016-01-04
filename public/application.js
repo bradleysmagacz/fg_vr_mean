@@ -1,6 +1,6 @@
-var mainApplicationModuleName = 'mean';
+var mainApplicationModuleName = 'fg_vr';
 
-var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngResource', 'ngRoute', 'users', 'articles', 'example', 'chat']);
+var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngResource', 'ngRoute', 'users', 'articles', 'index', 'chat']);
 angular.element(document).ready(function() {
   angular.bootstrap(document, [mainApplicationModuleName]);
 });

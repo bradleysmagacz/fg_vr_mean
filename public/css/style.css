@@ -1,0 +1,306 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+ul { 
+  list-style-type: none;
+}
+
+#header {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
+    height: 3em;
+    line-height: 3em;
+    box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+}
+
+#intro {
+  background: url(/img/fog-c.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+#gallery, #video {
+  padding: 10em 1em 6em;
+}
+
+#logo {
+  position: absolute;
+  left: 1em;
+  top: 0;
+  height: 3em;
+  line-height: 3em;
+  letter-spacing: -1px;
+}
+
+#logo a {
+  font-size: 1.25em;
+}
+
+#nav {
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+  height: 3em;
+  line-height: 3em;
+}
+
+#nav ul {
+  margin: 0;
+}
+
+#nav ul li {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 0.9em;
+}
+
+#nav ul li a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 0.5em 0 0.5em;
+  outline: 0;
+}
+
+.fg-login {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  height: 25em;
+  width: 35em;
+  padding: 3em 5em 4em;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 1px 1px 11px rgba(0,0,0,.6);
+  border-radius: 2px;
+}
+
+.fg-login h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.fg-login button {
+  margin-top: 10px;
+}
+
+.fg-login form {
+  margin-bottom: 0;
+}
+
+#admin-bg {
+  background: url(../img/canyon-c.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.error {
+  font-style: italic;
+  font-weight: 600;
+  color: red;
+  margin-bottom: 5px;
+}
+
+.thumbs {
+  width: 30%;
+  margin: .5em;
+}
+
+.controls {
+  font-size: 1.3em;
+}
+
+.controls span {
+  margin: .5em;
+}
+
+.video-gallery img {
+  margin: 1em;
+}
+
+.video-gallery div {
+  border: 1px solid black;
+  height: 300px;
+  padding: .5em;
+}
+
+#overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.75);
+    z-index: 9;
+}
+
+.new-vid {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+}
+
+.desc-text {
+  height: 110px!important;
+}
+
+#description {
+  width: 85%;
+  height: 100%;
+  float: right;
+  border:0;
+}
+
+#iRacial {
+  width: 15px;
+  float: left;
+  margin-left: 20px;
+}
+
+#iRacial:after {
+    content: "";
+    height: 30px;
+    width: 1px;
+    border-right: solid 1px #E6E9EA;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); 
+}
+
+.chk-val {
+  position: relative;
+  left: 30px;
+  top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.login-form {
+  background: white;
+  padding: 30px 0px 0px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.4);
+}
+
+.background {
+  min-height: 100vh;
+  background: linear-gradient(to right, rgba(255,101,39,.8) ,rgba(215,64,93,.8)) center center;
+  background-size: cover;
+  position: relative;
+  
+}
+
+.panel-footer {
+  padding: 30px 15px;
+}
+
+.panel-footer h4 {
+  display: inline;
+  font-size: 14px;
+}
+
+.resetbtn {
+  margin-bottom: 30px;
+}
+
+.forgot-link {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  color: rgb(20,20,255);
+}
+
+.category-btn {
+  margin: 10px;
+  border-radius: 0!important;
+}
+
+.gallery {
+  min-height: 750px;
+  background: linear-gradient(to right, rgba(255,101,39,.8) ,rgba(0,255,0,.8))  center center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+@media screen and (max-width: 736px) {
+  .login-form {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (min-width: 737px) and (max-width: 992px) {
+  .login-form {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+/*******************************************D3 Testing Code****************************/
+
+div.bar {
+  display: inline-block;
+  width: 20px;
+  height: 75px;   /* We'll override this later */
+  background-color: teal;
+  margin-right: .2em;
+}
+
+svg .bar-data {
+  font-size: 11px;
+  fill: white;
+  text-anchor: middle;
+}
+
+@media screen and (max-width: 490px) and (orientation: portrait) {
+  .fg-login {
+    width:90%;
+    height:22em;
+    padding: 2em 3em;
+  } 
+}
+
+@media screen and (max-width: 736px) and (orientation: landscape) {
+  .fg-login {
+    width:90%;
+    height:18em;
+    padding: 1em 3em;
+  }
+
+  .form-control {
+    height: 25px;
+  } 
+}
