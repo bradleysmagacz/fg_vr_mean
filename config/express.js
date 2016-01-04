@@ -75,8 +75,8 @@ module.exports = function(db) {
 
 	//Error Handlers
 	app.use(function(req, res) {
-    	res.status(404);
-    	res.render('404', {title: '404: File Not Found'});
+		res.status(404);
+    		res.render('404', {title: '404: File Not Found'});
   	});
   
   	app.use(function(error, req, res, next) {
