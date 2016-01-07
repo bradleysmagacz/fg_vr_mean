@@ -75,13 +75,13 @@ module.exports = function(db) {
 
 	//Error Handlers
 	app.use(function(req, res) {
-		res.status(404);
-		res.render('404', {title: '404: File Not Found'});
+	    res.status(404);
+	    res.render('404', {title: '404: File Not Found'});
   	});
   
   	app.use(function(error, req, res, next) {
-  		res.status(500);
-  		res.render('500', {title:'500: Internal Server Error', error: error});
+  	    res.status(500);
+  	    res.render('500', {title:'500: Internal Server Error', error: error});
   	});
 
 	// Load the Socket.io configuration
