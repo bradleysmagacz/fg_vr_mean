@@ -1,0 +1,39 @@
+include head.jade
+body 
+	-	var action = video ? "/video/edit/"+video.id : "/video/create";
+	-	var title = video ? video.title : ''
+	-	var description = video ? video.description : ''
+	-	var IRcheck = video ? video.interracial : false
+	-	var thumb = video ? video.thumb : ''
+	section.sign-up.text-center
+		div.container
+			div.row
+				div.col-md-6.col-md-offset-3
+					h3 Create New Video
+					p Fill in the fields below to add a new video to the database
+					if exists
+						.error A video with this title already exists.
+					form.signup-form(method="post", action=action)
+						div.form-input-group
+							i.fa.fa-file-text
+							input#title(type='text', name='title', placeholder='Enter video title', value=title)
+						div.form-input-group.desc-text
+							i.fa.fa-file-text  
+							textarea#description(name='description', placeholder='Enter description...')= description
+						div.form-input-group
+							i.fa.fa-sitemap
+							input#categories(type='text', name='categories', placeholder='Enter each category separated by a comma')
+						div.form-input-group
+							input#iRacial(type='checkbox', name="iRacial", checked=IRcheck)
+							p.chk-val Interracial
+						div.form-input-group
+							i.fa.fa-picture-o 
+							input#imgPath(name='imgPath', placeholder='Enter image path', value=thumb)
+						button.btn-fill.sign-up-btn#submit(type='submit') Save
+	script(type="text/javascript", src="js/bootstrap.min.js")
+	script(type="text/javascript", src="js/retina.js")
+	script(type="text/javascript", src="js/jquery.fancybox.pack.js")
+	script(type="text/javascript", src="js/scripts.js")
+	script(type="text/javascript", src="js/jquery.flexslider-min.js")
+	script(type="text/javascript", src="js/classie.js")
+	script(type="text/javascript", src="js/jquery.waypoints.min.js")

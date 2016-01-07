@@ -1,3 +1,5 @@
+/*jslint node: true */
+'use strict';
 
 var users = require('../../app/controllers/users.server.controller');
 var articles = require('../../app/controllers/articles.server.controller');
@@ -14,4 +16,4 @@ module.exports = function(app) {
 		.delete(users.authenticateUser, articles.hasAuthorization, articles.delete);
 
 	app.param('articleId', articles.articleByID);
-}
+};

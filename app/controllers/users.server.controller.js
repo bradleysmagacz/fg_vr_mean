@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 var User = require('mongoose').model('User');
 var nodemailer = require('nodemailer');
 
@@ -32,7 +35,7 @@ var getErrorMessage = function(err) {
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
 
 exports.OLD_createUser = function(req, res, next) {
 
@@ -166,14 +169,14 @@ exports.userLogin = function(req, res, next) {
         req.session.email = email;
         req.session.name = user.name.first;
         res.redirect('/');
-    })
+    });
 
     function invalid() {
         return res.render('login', {
             invalid: true
         });
     }
-}
+};
 
 exports.list = function(req, res, next) {
 
@@ -188,7 +191,7 @@ exports.list = function(req, res, next) {
 
 exports.read = function(req, res) {
     res.json(req.user);
-}
+};
 
 exports.userByID = function(req, res, next, id) {
     User.findOne({
@@ -212,7 +215,7 @@ exports.update = function(req, res, next) {
             res.json(user);
         }
     });
-}
+};
 
 exports.delete = function(req, res, next) {
 
@@ -220,7 +223,7 @@ exports.delete = function(req, res, next) {
         if (err) {
             return next(err);
         } else {
-            res.json(req.user)
+            res.json(req.user);
         }
     });
 };
@@ -293,7 +296,7 @@ exports.OLD_logout = function(req, res) {
     req.session.email = null;
     req.session.name = null;
     res.redirect('/');
-}
+};
 
 exports.logout = function(req, res) { 
     req.logout(); 

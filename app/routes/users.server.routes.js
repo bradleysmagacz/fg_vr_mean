@@ -1,3 +1,5 @@
+/*jslint node: true */
+'use strict';
 
 var users = require('../../app/controllers/users.server.controller'),
 	passport = require('passport');

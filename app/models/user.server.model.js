@@ -1,3 +1,5 @@
+/*jslint node: true */
+'use strict';
 
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema,
@@ -57,13 +59,13 @@ UserSchema.plugin(createdDate);
 
 UserSchema.virtual('fullname').get(function () {
   return this.name.first + ' ' + this.name.last;
-})
+});
 
 UserSchema.set('toJSON', { getters: true, virtuals: true });
 
 UserSchema.statics.findOneByUsername = function(username, callback) {
 	this.findOne({ username: new RegExp(username, 'i')}, callback);
-}
+};
 
 UserSchema.pre('save', function(next) { 
 
@@ -81,7 +83,7 @@ UserSchema.methods.hashPassword = function(password) {
 
 UserSchema.methods.authenticate = function(password) {
 	return this.password === this.hashPassword(password);
-}
+};
 
 UserSchema.post('save', function(next) {
 	if (this.isNew) {
@@ -90,6 +92,6 @@ UserSchema.post('save', function(next) {
 	else {
 		console.log('A user updated their information');
 	}
-})
+});
 
 mongoose.model('User', UserSchema);

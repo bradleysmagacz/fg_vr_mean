@@ -1,7 +1,11 @@
+/*jslint node: true */
+'use strict';
 
 var Article = require('mongoose').model('Article');
 
 var getErrorMessage = function(err) {
+
+	var message = '';
 
 	if (err.errors) {
 		for (var errName in err.errors) {
@@ -69,7 +73,7 @@ exports.articleByID = function(req, res, next, id) {
 
 exports.read = function(req, res) {
 	res.json(req.article);
-}
+};
 
 exports.update = function(req, res, next) {
 
@@ -101,7 +105,7 @@ exports.delete = function(req, res) {
 		} else {
 			res.json(article);
 		}
-	})
+	});
 };
 
 // Create a new controller middleware that is used to authorize an article operation 

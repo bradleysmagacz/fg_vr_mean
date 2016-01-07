@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 var crypto = require('crypto');
 
 module.exports = function (pass, salt) {
@@ -5,4 +8,4 @@ module.exports = function (pass, salt) {
   hash.update(pass, 'utf8');
   hash.update(salt, 'utf8');
   return hash.digest('base64');
-}
+};

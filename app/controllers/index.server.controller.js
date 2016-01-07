@@ -1,4 +1,4 @@
-// Invoke 'strict' JavaScript mode
+/*jslint node: true */
 'use strict';
 
 // Create a new 'render' controller method
