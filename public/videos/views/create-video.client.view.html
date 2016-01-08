@@ -1,0 +1,32 @@
+<section data-ng-controller="VideosController">
+	<h1>New Video</h1>
+	<form data-ng-submit="create()" novalidate>
+		<div>
+			<label for="title">Title</label>
+			<div>
+				<input type="text" data-ng-model="title" id="title" placeholder="Title" required>
+			</div>
+		</div>
+
+		<div>
+			<label for="description">Description</label>
+			<div>
+				<textarea data-ng-model="description" id="desc" cols="30" rows="10" placeholder="Description"></textarea>
+			</div>
+		</div>
+
+		<div>
+			<label for="categories">Categories</label>
+			<div>
+				<input type="text" data-ng-model="categories" id="categories" placeholder="Enter each category separated by a comma">
+			</div>
+		</div>
+		<div>
+			<input type="submit">
+		</div>
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+</section>
+

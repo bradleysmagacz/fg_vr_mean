@@ -3,14 +3,25 @@ angular.module('videos').controller('VideosController', ['$scope', '$routeParams
 		
 		$scope.authentication = Authentication;
 
+		$scope.orderProp = '-created';
+		$scope.quantity = '3';
+
 		$scope.create = function() {
+
+			var categoryField = this.categories;
+			categoryField = categoryField.replace(/\s+/g, '').toLowerCase();
+
+			var categoryArray = [];
+    		categoryArray = categoryField.split(",");
+
 			var video = new Videos({
 				title: this.title,
-				content: this.content
+				description: this.description,
+				categories: categoryArray
 			});
 
 			video.$save(function(response) { 
-				$location.path('videos/' + response._id);
+				$location.path('videos/' + response.permalink);
 			}, function(errorResponse) { 
 				$scope.error = errorResponse.data.message;
 			});
@@ -28,7 +39,7 @@ angular.module('videos').controller('VideosController', ['$scope', '$routeParams
 
 		$scope.update = function() {
 			$scope.video.$update(function() {
-				$location.path('videos/' + $scope.video._id);
+				$location.path('videos/' + $scope.video.permalink);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

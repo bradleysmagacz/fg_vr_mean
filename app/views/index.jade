@@ -1,6 +1,6 @@
 include head.jade
 body#top
-	div(ng-view)
+	section(ng-view)
 
 	if user
 		script(type="text/javascript").
@@ -24,6 +24,10 @@ body#top
 	script(type="text/javascript", src="/articles/controllers/articles.client.controller.js")
 	script(type="text/javascript", src="/articles/services/articles.client.service.js")
 	script(type="text/javascript", src="/articles/config/articles.client.routes.js")
+	script(type="text/javascript", src="/videos/videos.client.module.js")
+	script(type="text/javascript", src="/videos/controllers/videos.client.controller.js")
+	script(type="text/javascript", src="/videos/services/videos.client.service.js")
+	script(type="text/javascript", src="/videos/config/videos.client.routes.js")
 	script(type="text/javascript", src="/index/index.client.module.js")
 	script(type="text/javascript", src="/index/controllers/index.client.controller.js")
 	script(type="text/javascript", src="/index/config/index.client.routes.js")

@@ -2,60 +2,58 @@
 
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema,
+	cleanString = require('../helpers/cleanString');
 	createdDate = require('../plugins/createdDate');
 
 var VideoSchema = new Schema({
-   	_id: { 
-   		type: String, 
-   		required: true 
-   	},
 	title: { 
 		type: String, 
-		required: true 
+		required: true,
+		index: true,
+		unique: true 
+	},
+	permalink: {
+		type: String
 	},
 	description: { 
 		type: String 
 	},
 	categories: { 
-		type: Array 
+		type: Array,
+		index: true 
 	},
 	actors: { 
 		type: Array 
-	},
-	age: { 
-		type: String 
-	},
-	interracial: { 
-		type: Boolean, 
-		default:0 
 	},
 	orientation: { 
 		type: String 
 	},
 	thumb: { 
-		type: String 
+		type: String,
+		default: 'img/thumbs/kitten.png' 
+	},
+	creator: {
+		type: Schema.ObjectId,
+		ref: 'User'
 	}
 });
 
+VideoSchema.pre('save', function(next) { 
+
+	this.permalink = this.title.replace(/\s+/g, '-').toLowerCase();
+
+	next();
+});
+
 // add created date property
-schema.plugin(createdDate);
+VideoSchema.plugin(createdDate);
 
-// compile the model
-var Video = mongoose.model('Video', schema);
-
-// handle events
-Video.on('afterInsert', function (post) {
-  // fake tweet this
-  var url = "http://localhost:3000/video/";
-  console.log('New video has been created! %s%s', url, post.id);
-})
-
-Video.on('afterRemove', function (post) {
+VideoSchema.on('afterRemove', function (post) {
   this.remove({ video: video._id }).exec(function (err) {
     if (err) {
       console.error('Had trouble removing the video', err.stack);
     }
-  })
-})
+  });
+});
 
-module.exports = Video;
+mongoose.model('Video', VideoSchema);

@@ -1,21 +1,24 @@
-<div ng-controller='IndexController'>
-	<section class="hero">
-		<div id="overlay"></div>
-		<section class="navigation">
-			<header>
-				<div class="header-content">
-					<div class="logo">
-						<a href="#"><img src="img/fg-logo.png" alt="Logo"></a>
-					</div>
+<section class="hero" ng-controller="IndexController">
+	
+	<div id="overlay"></div>
+	
+	<section class="navigation">
+		<header>
+			<div class="header-content">
+				<div class="logo">
+					<a href="#"><img src="img/fg-logo.png" alt="Logo"></a>
+				</div>
 				<div class="header-nav">
 					<nav>
 						<ul class="primary-nav">
 							<li><a href="/#!/">Home</a></li>
-							<li><a href="#gallery">Gallery</a></li>
+							<li><a scroll-on-click href="#gallery">Gallery</a></li>
 							<span data-ng-show="authentication.user">
 								<li><a href="/#!/chat">Chat</a></li>
-								<li><a href="/#!/articles">List Articles</a></li>
-								<li><a href="/#!/articles/create">Create Article</a></li>
+								<li><a href="/#!/videos">List Videos</a></li>
+								<span data-ng-show="authentication.user.isAdmin">
+									<li><a href="/#!/videos/create">Create Video</a></li>
+								</span>
 							</span>
 						</ul>
 						<ul class="member-actions">
@@ -33,27 +36,95 @@
 				<div class="navicon">
 					<a class="nav-toggle" href="#"><span></span></a>
 				</div>
-			</header>
-		</section>
+			</div>
+		</header>
+	</section>
 
-		<section class="introduction">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="hero-content text-center">
-							<h1>Foggy Goggles</h1>
-							<p class="intro">Experience content like never before.</p>
-							<a class="btn btn-fill btn-large btn-margin-right" href="#">Tour</a>
-							<a class="btn btn-accent btn-large" href="#gallery">Gallery</a>
-						</div>
+	<section class="introduction">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="hero-content text-center">
+						<h1>Foggy Goggles</h1>
+						<p class="intro">Experience content like never before.</p>
+						<a class="btn btn-fill btn-large btn-margin-right" href="#">Tour</a>
+						<a class="btn btn-accent btn-large" href="#gallery">Gallery</a>
 					</div>
 				</div>
 			</div>
-		</section>
-
-		<div class="down-arrow floating-arrow">
-			<a href="#"><i class="fa fa-angle-down"></i></a>
 		</div>
-
 	</section>
-</div>
+
+	<div class="down-arrow floating-arrow">
+		<a href="#"><i class="fa fa-angle-down"></i></a>
+	</div>
+</section>
+
+<section class="blog text-center" id="gallery" data-ng-controller="VideosController" data-ng-init="find()">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4" data-ng-repeat="video in videos | filter:query | orderBy:orderProp | limitTo: quantity">
+				<article class="blog-post">
+					<figure>
+						<a class="single_image" data-ng-href="{{video.thumb}}">
+							<div class="blog-img-wrap">
+								<div class="overlay">
+									<i class="fa fa-search"></i>
+								</div>
+								<img ng-src="{{video.thumb}}">
+							</div>
+						</a>
+						<figcaption>
+							<h2>
+								<a class="blog-category" href="#" data-toggle="tooltip" data-placement="top" data-original-title="See more videos" data-ng-bind="video.description"></a>
+							</h2>
+							<p>
+								<a class="blog-post-title" href="#!/videos/{{video._id}}" data-ng-bind="video.title">
+									<i class="fa fa-angle-right"></i>
+								</a>
+							</p>
+						</figcaption>
+					</figure>
+				</article>
+			</div>
+			<a class="btn btn-ghost btn-accent btn-small" href="#!/videos">More Videos</a>
+		</div>
+	</div>
+</section>
+
+<section class="to-top">
+	<div class="container">
+		<div class="row">
+			<div class="to-top-wrap">
+				<a class="top" scroll-on-click href="#top"><i class="fa fa-angle-up"></i></a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="footer-links">
+					<ul class="footer-group">
+						<li><a href="#">Features</a></li>
+						<li><a href="#">Pricing</a></li>
+						<li><a href="#">Sign Up</a></li>
+					</ul>
+					<p>
+						Copyright © 2016 <a href="#">Foggy Goggles</a>
+						<br>
+						<a href="#">License</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="social-share">
+				<p>Share Foggy Goggles</p>
+				<a class="twitter-share" href="#"><i class="fa fa-twitter"></i></a>
+				<a class="facebook-share" href="#"><i class="fa fa-facebook"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>

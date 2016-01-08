@@ -1,6 +1,6 @@
 var mainApplicationModuleName = 'fg_vr';
 
-var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngResource', 'ngRoute', 'users', 'articles', 'index', 'chat']);
+var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngResource', 'ngRoute', 'users', 'articles', 'index', 'chat', 'videos']);
 
 angular.element(document).ready(function() {
   angular.bootstrap(document, [mainApplicationModuleName]);
