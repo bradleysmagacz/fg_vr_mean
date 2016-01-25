@@ -1,0 +1,35 @@
+section.navigation.fixed(ng-controller="NavController")
+	header
+		div.header-content
+			div.logo
+				a(href="#")
+					img(src="img/fg-logo.png", alt="Logo")
+			div.header-nav
+				nav
+					ul.primary-nav
+						li
+							a(href="/#!/") Home
+						li
+							a(scroll-on-click href="#gallery") Gallery
+						span(data-ng-show="authentication.user")
+							li
+								a(href="/#!/chat") Chat
+							li
+								a(href="/#!/videos") List Videos
+							span(data-ng-show="authentication.user.isAdmin")
+								li
+									a(href="/#!/videos/create") Create Video
+					ul.member-actions
+						span(data-ng-show="!authentication.user")
+							li
+								a.login(href="/login") Login
+							li
+								a.btn-white.btn-small(href="/signup") Signup
+						span(data-ng-show="authentication.user")
+							li
+								a.login(href="/logout") Logout
+							li
+								a.btn-white.btn-small(href="#!/account") Your Account
+			div.navicon
+				a.nav-toggle(href="#")
+					span

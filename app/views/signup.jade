@@ -1,9 +1,15 @@
 include head.jade
 body
 	h3 Error below
-	- for (var i in messages) {
-		div.flash= messages[i]
-	- }
+	if messages.error
+		.alert.alert-danger
+			div= messages.error
+	if messages.info
+		.alert.alert-info
+			div= messages.info
+	if messages.success
+		.alert.alert-success
+			div= messages.success
 	form(method='post', action='/signup', enctype='application/x-www-form-urlencoded')
 		h3 Create Account
 		ul

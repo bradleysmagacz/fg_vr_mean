@@ -1,44 +1,6 @@
-<section class="hero" ng-controller="IndexController">
+<section class="hero">
 	
 	<div id="overlay"></div>
-	
-	<section class="navigation">
-		<header>
-			<div class="header-content">
-				<div class="logo">
-					<a href="#"><img src="img/fg-logo.png" alt="Logo"></a>
-				</div>
-				<div class="header-nav">
-					<nav>
-						<ul class="primary-nav">
-							<li><a href="/#!/">Home</a></li>
-							<li><a scroll-on-click href="#gallery">Gallery</a></li>
-							<span data-ng-show="authentication.user">
-								<li><a href="/#!/chat">Chat</a></li>
-								<li><a href="/#!/videos">List Videos</a></li>
-								<span data-ng-show="authentication.user.isAdmin">
-									<li><a href="/#!/videos/create">Create Video</a></li>
-								</span>
-							</span>
-						</ul>
-						<ul class="member-actions">
-							<span data-ng-show="!authentication.user">
-								<li><a class="login" href="/login">Login</a></li>
-								<li><a class="btn-white btn-small" href="/signup">Signup</a></li>
-							</span>
-							<span data-ng-show="authentication.user">
-								<li><a class="login" href="/logout">Logout</a></li>
-								<li><a class="btn-white btn-small" href="/account">Your Account</a></li>
-							</span>
-						</ul>
-					</nav>
-				</div>
-				<div class="navicon">
-					<a class="nav-toggle" href="#"><span></span></a>
-				</div>
-			</div>
-		</header>
-	</section>
 
 	<section class="introduction">
 		<div class="container">

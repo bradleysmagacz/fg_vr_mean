@@ -21,7 +21,7 @@ angular.module('videos').controller('VideosController', ['$scope', '$routeParams
 			});
 
 			video.$save(function(response) { 
-				$location.path('videos/' + response.permalink);
+				$location.path('videos/' + response._id);
 			}, function(errorResponse) { 
 				$scope.error = errorResponse.data.message;
 			});
@@ -39,7 +39,7 @@ angular.module('videos').controller('VideosController', ['$scope', '$routeParams
 
 		$scope.update = function() {
 			$scope.video.$update(function() {
-				$location.path('videos/' + $scope.video.permalink);
+				$location.path('videos/' + $scope.video._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

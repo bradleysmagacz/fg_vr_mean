@@ -20,4 +20,14 @@ module.exports = function(app) {
 
 	app.route('/logout')
 		.get(users.logout);
+
+	app.route('/forgot')
+		.get(users.renderForgotPasswordPage)
+		.post(users.sendResetPasswordEmail);
+
+	app.route('/reset/:token')
+		.get(users.renderResetPasswordPage)
+		.post(users.resetPassword);
+
+	app.param('token', users.retrievePasswordToken);
 };

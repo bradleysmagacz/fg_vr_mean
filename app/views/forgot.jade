@@ -1,0 +1,27 @@
+include head.jade
+body
+	div.background
+		section.sign-up.section-padding.text-center#login
+			div.container
+				if messages.error
+					.alert.alert-danger
+						div= messages.error
+				if messages.info
+					.alert.alert-info
+						div= messages.info
+				if messages.success
+					.alert.alert-success
+						div= messages.success
+				div.row
+					div.col-md-6.col-md-offset-3.login-form
+						h3 Forgot Password
+						p Please enter your email below to reset your password
+						form.signup-form(method='post', action='/forgot', enctype='application/x-www-form-urlencoded')
+							if invalid
+								.error Please enter a valid email address and password.
+							div.form-input-group
+								i.fa.fa-envelope
+								input#email(type='text', placeholder='Enter your email', name='email', required)
+							button.btn-fill.sign-up-btn.resetbtn#submit(type='submit') Reset Password
+
+

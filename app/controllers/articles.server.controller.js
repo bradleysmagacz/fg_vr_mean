@@ -66,7 +66,6 @@ exports.articleByID = function(req, res, next, id) {
 		}
 
 		req.article = article;
-		console.log("We have found article" + article._id);
 		next();
 	});
 };

@@ -1,6 +1,6 @@
-<section data-ng-controller="ChatController">
-	<div data-ng-repeat="message in messages" data-ng-switch="message.type">
-		<strong data-ng-switch-when='status'>
+<section data-ng-controller="ChatController" class="chat-controller">
+	<div data-ng-repeat="message in messages" data-ng-switch="message.type" id="messages">
+		<strong data-ng-switch-when='status' class="chat-status">
 			<span data-ng-bind="message.created | date:'mediumTime'"></span>
 			<span data-ng-bind="message.username"></span>
 			<span>is</span>
@@ -8,13 +8,13 @@
 		</strong>
 		<span data-ng-switch-default> 
 			<span data-ng-bind="message.created | date:'mediumTime'"></span> 
-			<span data-ng-bind="message.username"></span> 
-			<span>:</span> 
+			<span data-ng-bind="message.username"></span><span>:</span> 
 			<span data-ng-bind="message.text"></span> 
 		</span> 
-	</div> 
-	<form ng-submit="sendMessage();"> 
-		<input type="text" data-ng-model="messageText">
+	</div>
+	<div id="updates" style="margin-top:50px"></div> 
+	<form ng-submit="sendMessage();" class="chat-form"> 
+		<input type="text" data-ng-model="messageText" id="msg" ng-focus="checkTyper()">
 		<input type="submit"> 
 	</form> 
 </section>

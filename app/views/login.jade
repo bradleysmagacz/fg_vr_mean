@@ -7,9 +7,15 @@ body
 					div.col-md-6.col-md-offset-3.login-form
 						h3 Login to your account
 						p Start fogging up those goggles!
-						- for (var i in messages) {
-							div.flash= messages[i]
-						- }
+						if messages.error
+							.alert.alert-danger
+								div= messages.error
+						if messages.info
+							.alert.alert-info
+								div= messages.info
+						if messages.success
+							.alert.alert-success
+								div= messages.success
 						form.signup-form(method='post', action='/login')
 							div.form-input-group
 								i.fa.fa-envelope

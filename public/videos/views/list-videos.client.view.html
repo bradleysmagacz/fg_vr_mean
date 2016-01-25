@@ -1,16 +1,18 @@
-<section data-ng-controller="VideosController" data-ng-init="find()">
-	<h1>Videos</h1>
-	<ul>
-		<li data-ng-repeat="video in videos">
-			<a data-ng-href="#!/videos/{{video.permalink}}" data-ng-bind="video.title"></a>
-			<br>
-			<small data-ng-bind="video.created | date:'medium'"></small>
-			<small>/</small>
-			<small data-ng-bind="video.creator.fullname"></small>
-			<p data-ng-bind="video.content"></p>
-		</li>
-	</ul>
-	<div data-ng-hide="!videos || videos.length">
-		<span>No videos yet, why don't you <a href="/#!/videos/create">create one</a>?</span>
+<section class="video-page" data-ng-controller="VideosController" data-ng-init="find()">
+	<div class="container">
+		<h1>Videos</h1>
+		<ul>
+			<li data-ng-repeat="video in videos">
+				<a data-ng-href="#!/videos/{{video._id}}" data-ng-bind="video.title"></a>
+				<br>
+				<small data-ng-bind="video.created | date:'medium'"></small>
+				<small>/</small>
+				<small data-ng-bind="video.creator.fullname"></small>
+				<p data-ng-bind="video.content"></p>
+			</li>
+		</ul>
+		<div data-ng-hide="!videos || videos.length">
+			<span>No videos yet, why don't you <a href="/#!/videos/create">create one</a>?</span>
+		</div>
 	</div>
 </section>

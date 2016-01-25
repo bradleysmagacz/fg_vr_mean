@@ -1,4 +1,4 @@
-angular.module('index').controller('IndexController', ['$scope', 'Authentication',
+angular.module('index').controller('NavController', ['$scope', 'Authentication',
 	function($scope, Authentication) {
 		$scope.authentication = Authentication;
 	}

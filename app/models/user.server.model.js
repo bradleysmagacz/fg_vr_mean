@@ -27,12 +27,7 @@ var UserSchema =  new Schema({
   },
 	password: { 
   		type: String, 
-  		required: true,
-  		validate: [
-  			function(password) {
-  				return password && password.length>6;
-  			}, 'Password needs to exceed 6 characters'
-  		] 
+  		required: true 
   },
 	salt: { 
   		type: String 
@@ -74,6 +69,8 @@ UserSchema.pre('save', function(next) {
 		this.password = this.hashPassword(this.password);
 	}
 
+  this.wasNew = this.isNew;
+
 	next();
 });
 
@@ -86,12 +83,19 @@ UserSchema.methods.authenticate = function(password) {
 };
 
 UserSchema.post('save', function(next) {
-	if (this.isNew) {
+	if (this.wasNew) {
 		console.log('A new user was created');
 	}
 	else {
 		console.log('A user updated their information');
 	}
 });
+
+UserSchema.path('password').validate(function(password) {  
+
+  var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+  return regex.test(password);
+}, "Password must be 8 characters long and contain at least one lowercase letter, one uppercase letter, and one number");
 
 mongoose.model('User', UserSchema);

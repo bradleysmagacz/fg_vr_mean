@@ -12,7 +12,7 @@ var config = require('./config'),
 	methodOverride = require('method-override'),
 	session = require('express-session'),
 	MongoStore = require('connect-mongo')(session),
-	flash = require('connect-flash'),
+	flash = require('express-flash'),
 	passport = require('passport');
 
 // Define the Express configuration method

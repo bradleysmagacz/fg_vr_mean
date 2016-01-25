@@ -1,5 +1,7 @@
 include head.jade
 body#top
+
+	include nav.jade
 	section(ng-view)
 
 	if user
@@ -37,4 +39,7 @@ body#top
 	script(type="text/javascript", src="/chat/controllers/chat.client.controller.js")
 	script(type="text/javascript", src="/chat/services/socket.client.service.js")
 	script(type="text/javascript", src="/chat/config/chat.client.routes.js")
+	script(type="text/javascript", src="/account/account.client.module.js")
+	script(type="text/javascript", src="/account/controllers/account.client.controller.js")
+	script(type="text/javascript", src="/account/config/account.client.routes.js")
 	script(type="text/javascript", src="/application.js")

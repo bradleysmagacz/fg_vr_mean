@@ -1,4 +1,4 @@
-<section data-ng-controller="VideosController" data-ng-init="findOne()">
+<section class="video-page" data-ng-controller="VideosController" data-ng-init="findOne()">
 	<h1 data-ng-bind="video.title"></h1>
 	<div data-ng-show="authentication.user._id == video.creator._id">
 		<a href="/#!/videos/{{video._id}}/edit">edit</a>
